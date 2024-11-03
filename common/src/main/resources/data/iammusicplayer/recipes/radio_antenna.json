@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "antenna",
+  "key": {
+    "I": {
+      "tag": "forge:plates/iron"
+    },
+    "R": {
+      "item": "minecraft:redstone_torch"
+    },
+    "S": {
+      "item": "create:shaft"
+    }
+  },
+  "pattern": [
+    "R",
+    "S",
+    "I"
+  ],
+  "result": {
+    "item": "iammusicplayer:radio_antenna"
+  },
+  "show_notification": true
+}

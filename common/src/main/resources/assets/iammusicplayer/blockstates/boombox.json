@@ -1,34 +1,150 @@
 {
   "variants": {
-    "facing=east,power=true": {
+    "face=floor,facing=east,power=true": {
       "model": "iammusicplayer:block/boombox/boombox_on",
       "y": 90
     },
-    "facing=north,power=true": {
+    "face=floor,facing=north,power=true": {
       "model": "iammusicplayer:block/boombox/boombox_on"
     },
-    "facing=south,power=true": {
+    "face=floor,facing=south,power=true": {
       "model": "iammusicplayer:block/boombox/boombox_on",
       "y": 180
     },
-    "facing=west,power=true": {
+    "face=floor,facing=west,power=true": {
       "model": "iammusicplayer:block/boombox/boombox_on",
       "y": 270
     },
-    "facing=east,power=false": {
+    "face=floor,facing=east,power=false": {
       "model": "iammusicplayer:block/boombox/boombox_off",
       "y": 90
     },
-    "facing=north,power=false": {
+    "face=floor,facing=north,power=false": {
       "model": "iammusicplayer:block/boombox/boombox_off"
     },
-    "facing=south,power=false": {
+    "face=floor,facing=south,power=false": {
       "model": "iammusicplayer:block/boombox/boombox_off",
       "y": 180
     },
-    "facing=west,power=false": {
+    "face=floor,facing=west,power=false": {
       "model": "iammusicplayer:block/boombox/boombox_off",
       "y": 270
+    },
+    "face=ceiling,facing=east,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 270,
+      "x": 180
+    },
+    "face=ceiling,facing=north,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=south,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 0,
+      "x": 180
+    },
+    "face=ceiling,facing=west,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 90,
+      "x": 180
+    },
+    "face=ceiling,facing=east,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 270,
+      "x": 180
+    },
+    "face=ceiling,facing=north,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=south,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 0,
+      "x": 180
+    },
+    "face=ceiling,facing=west,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 90,
+      "x": 180
+    },
+    "vertical_direction=up,face=wall,facing=east,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 90,
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=north,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=south,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 180,
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=west,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 270,
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=east,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 90,
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=north,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=south,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 180,
+      "x": 90
+    },
+    "vertical_direction=up,face=wall,facing=west,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 270,
+      "x": 90
+    },
+    "vertical_direction=down,face=wall,facing=east,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 270,
+      "x": 270
+    },
+    "vertical_direction=down,face=wall,facing=north,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "x": 270,
+      "y": 180
+    },
+    "vertical_direction=down,face=wall,facing=south,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "x": 270
+    },
+    "vertical_direction=down,face=wall,facing=west,power=true": {
+      "model": "iammusicplayer:block/boombox/boombox_on",
+      "y": 90,
+      "x": 270
+    },
+    "vertical_direction=down,face=wall,facing=east,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 270,
+      "x": 270
+    },
+    "vertical_direction=down,face=wall,facing=north,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "x": 270,
+      "y": 180
+    },
+    "vertical_direction=down,face=wall,facing=south,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "x": 270
+    },
+    "vertical_direction=down,face=wall,facing=west,power=false": {
+      "model": "iammusicplayer:block/boombox/boombox_off",
+      "y": 90,
+      "x": 270
     }
   }
 }

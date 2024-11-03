@@ -47,16 +47,20 @@ public class MusicManagerBlockEntityRenderer extends AbstractBlockEntityRenderer
         OERenderUtils.renderModel(poseStack, vertexConsumer, acLmp, i, j);
         poseStack.popPose();
 
-        if (!IamMusicPlayer.getConfig().hideDisplaySprite) {
-            poseStack.pushPose();
-            poseStack.translate(1, 0, 0);
-            OERenderUtils.poseRotateY(poseStack, 180);
-            OERenderUtils.poseTrans16(poseStack, 0.25f, 1.75f, -12.375f);
-            var monitor = getMonitor(blockEntity.getMonitor(mc.player));
-            float px16 = 1f / 16f;
-            monitor.renderAppearance(blockEntity, poseStack, multiBufferSource, LightTexture.FULL_BRIGHT, j, f, px16 * 10.5f, px16 * 6.5f);
-            poseStack.popPose();
-        }
+        //commenting this out as the display is not designed to be rendered by my new models, plus they clash aesthetically.
+        //if anyone wants to adjust the position to fit the new models be my guest
+        // - billnotic
+        //--
+        //if (!IamMusicPlayer.getConfig().hideDisplaySprite) {
+        //    poseStack.pushPose();
+        //    poseStack.translate(1, 0, 0);
+        //    OERenderUtils.poseRotateY(poseStack, 180);
+        //    OERenderUtils.poseTrans16(poseStack, 0.25f, 1.75f, -12.375f);
+        //    var monitor = getMonitor(blockEntity.getMonitor(mc.player));
+        //    float px16 = 1f / 16f;
+        //    monitor.renderAppearance(blockEntity, poseStack, multiBufferSource, LightTexture.FULL_BRIGHT, j, f, px16 * 10.5f, px16 * 6.5f);
+        //    poseStack.popPose();
+        //}
 
         poseStack.popPose();
     }

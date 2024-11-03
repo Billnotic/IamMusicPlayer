@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "minecraft:buttons"
+    },
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "I": {
+      "tag": "forge:plates/iron"
+    },
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "N": {
+      "item": "minecraft:note_block"
+	}
+  },
+  "pattern": [
+    "CBC",
+    "NJN",
+    "IEI"
+  ],
+  "result": {
+    "item": "iammusicplayer:boombox"
+  },
+  "show_notification": true
+}

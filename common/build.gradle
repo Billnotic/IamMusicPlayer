@@ -8,7 +8,7 @@ loom {
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-
+   
     modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
     modApi "dev.felnull:otyacraftengine:${rootProject.oe_version}"
@@ -23,7 +23,6 @@ dependencies {
         exclude group: 'dev.arbjerg', module: 'lavaplayer-natives'
     }
     implementation("dev.lavalink.youtube:v2:${rootProject.lava_version_youtube}")
-
     implementation 'com.github.sealedtx:java-youtube-downloader:3.1.0'
     implementation 'com.mpatric:mp3agic:0.9.1'
 }
@@ -34,8 +33,8 @@ publishing {
             artifactId = rootProject.archives_base_name
             from components.java
             pom {
-                name = 'IamMusicPlayer'
-                description = 'The ikisugi music player mod.'
+                name = 'Create - Songs and Speakers (Iam Music Player Fork)'
+                description = 'A fork of the Ikisugi Music Player mod that makes models, textures, and ui more in line with Create.'
                 licenses {
                     license {
                         name = 'GNU Lesser General Public License v3.0'
@@ -51,6 +50,10 @@ publishing {
                         id = 'FelNull'
                         name = 'TeamFelNull'
                         email = 'teamfelnull@felnull.dev'
+                    }
+                    developer {
+                        id = 'Billnotic'
+                        name = 'Billnotic'
                     }
                 }
             }

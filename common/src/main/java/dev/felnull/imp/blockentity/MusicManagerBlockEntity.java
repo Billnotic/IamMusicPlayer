@@ -43,6 +43,8 @@ public class MusicManagerBlockEntity extends IMPBaseEntityBlockEntity {
     }
 
     public static void tick(Level level, BlockPos blockPos, BlockState blockState, MusicManagerBlockEntity blockEntity) {
+        //if ()
+
         if (!level.isClientSide()) {
             blockEntity.playerData.forEach((n, m) -> {
                 var monst = m.getString("Monitor");

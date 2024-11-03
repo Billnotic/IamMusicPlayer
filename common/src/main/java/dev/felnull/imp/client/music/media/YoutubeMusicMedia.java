@@ -24,7 +24,6 @@ public class YoutubeMusicMedia extends LavaPlayerBaseMusicMedia {
 
     @Override
     public void registerSourceManager(AudioPlayerManager audioPlayerManager) {
-        // FIXME 開発環境でForgeが起動できない
         audioPlayerManager.registerSourceManager(new YoutubeAudioSourceManager());
     }
 

@@ -20,7 +20,7 @@ public class IMPBlocks {
     private static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(IamMusicPlayer.MODID, Registries.ITEM);
     public static final RegistrySupplier<Block> MUSIC_MANAGER = register("music_manager", () -> new MusicManagerBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().strength(3.0F).requiresCorrectToolForDrops()));
     public static final RegistrySupplier<Block> CASSETTE_DECK = register("cassette_deck", () -> new CassetteDeckBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).requiresCorrectToolForDrops().strength(3.0F).requiresCorrectToolForDrops()));
-    public static final RegistrySupplier<Block> BOOMBOX = register("boombox", () -> new BoomboxBlock(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(3.0F)), n -> new BoomboxItem(n, new Item.Properties().arch$tab(IMPCreativeModeTabs.MOD_TAB).stacksTo(1)));
+    public static final RegistrySupplier<Block> BOOMBOX = register("boombox", () -> new BoomboxBlock(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(3.0F)), n -> new BoomboxItem(n, new Item.Properties().arch$tab(IMPCreativeModeTabs.MOD_TAB).stacksTo(1)));
 
     private static RegistrySupplier<Block> register(String name, Supplier<Block> block) {
         return register(name, block, n -> new BlockItem(n, new Item.Properties().arch$tab(IMPCreativeModeTabs.MOD_TAB)));

@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:brass_casing"
+    },
+    "C": {
+      "tag": "forge:ingots/copper"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "G": {
+      "tag": "forge:glass_panes/colorless"
+    },
+    "I": {
+      "tag": "forge:plates/iron"
+    },
+    "K": {
+      "item": "create:belt_connector"
+    },
+    "R": {
+      "item": "create:redstone_link"
+    }
+  },
+  "pattern": [
+    "IIB",
+    "GCR",
+    "KKE"
+  ],
+  "result": {
+    "item": "iammusicplayer:music_manager"
+  },
+  "show_notification": true
+}

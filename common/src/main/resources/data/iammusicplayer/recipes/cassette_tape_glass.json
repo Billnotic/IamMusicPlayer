@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " B ",
+        "CDC",
+        " K "
+    ],
+    "key": {
+        "B": {
+            "item": "create:belt_connector"
+        },
+        "C": {
+            "item": "create:cogwheel"
+        },
+        "D": {
+            "tag": "forge:ingots/copper"
+        },
+        "K": {
+            "tag": "forge:glass/colorless"
+        }
+    },
+    "result": {
+		"item": "iammusicplayer:cassette_tape_glass"
+	}
+}

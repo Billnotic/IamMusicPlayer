@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -24,7 +25,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -32,12 +33,38 @@ import org.jetbrains.annotations.Nullable;
 
 public class BoomboxBlock extends IMPBaseEntityBlock {
     private static final DirectionVoxelShapesBundle SHAPE = OEVoxelShapeUtils.makeAllDirection(OEVoxelShapeUtils.getShapeFromResource(new ResourceLocation(IamMusicPlayer.MODID, "boombox"), BoomboxBlock.class));
-    private static final DirectionVoxelShapesBundle SHAPE_NO_RAISED = OEVoxelShapeUtils.makeAllDirection(OEVoxelShapeUtils.getShapeFromResource(new ResourceLocation(IamMusicPlayer.MODID, "boombox_no_raised"), BoomboxBlock.class));
     public static final BooleanProperty RAISED = IMPBlockStateProperties.RAISE;
+    public static final EnumProperty<AttachFace> FACE = BlockStateProperties.ATTACH_FACE;
+    public static final DirectionProperty VERTICAL_DIRECTION = BlockStateProperties.VERTICAL_DIRECTION;
 
     protected BoomboxBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(RAISED, true));
+        this.registerDefaultState(this.defaultBlockState()
+                .setValue(RAISED, true)
+                .setValue(FACE, AttachFace.FLOOR)
+                .setValue(VERTICAL_DIRECTION, Direction.UP)
+        );
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+        if (blockPlaceContext.getClickedFace() == Direction.UP){
+            return super.getStateForPlacement(blockPlaceContext)
+                    .setValue(FACING, blockPlaceContext.getHorizontalDirection().getOpposite())
+                    .setValue(FACE, AttachFace.FLOOR)
+                    .setValue(VERTICAL_DIRECTION, Direction.UP);
+        } else if (blockPlaceContext.getClickedFace() == Direction.DOWN){
+            return super.getStateForPlacement(blockPlaceContext)
+                    .setValue(FACING, blockPlaceContext.getHorizontalDirection().getOpposite())
+                    .setValue(FACE, AttachFace.CEILING)
+                    .setValue(VERTICAL_DIRECTION, Direction.UP);
+        } else {
+            return super.getStateForPlacement(blockPlaceContext)
+                    .setValue(FACING, blockPlaceContext.getHorizontalDirection().getOpposite())
+                    .setValue(FACE, AttachFace.WALL)
+                    .setValue(VERTICAL_DIRECTION, blockPlaceContext.getNearestLookingVerticalDirection());
+        }
     }
 
     @Override
@@ -70,14 +97,35 @@ public class BoomboxBlock extends IMPBaseEntityBlock {
 
     @Override
     public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        var shp = blockState.getValue(RAISED) ? SHAPE : SHAPE_NO_RAISED;
-        return shp.getShape(blockState.getValue(FACING));
+        //var shp = SHAPE;
+        VoxelShape tempVoxel = SHAPE.getShape(blockState.getValue(FACING));
+
+        if (blockState.getValue(FACE) == AttachFace.WALL) {
+            if (blockState.getValue(FACING) == Direction.SOUTH) {
+                //tempVoxel = OEVoxelShapeUtils.rotateBoxY180(tempVoxel);
+            } else if (blockState.getValue(FACING) == Direction.EAST) {
+                tempVoxel = OEVoxelShapeUtils.rotateBoxX90(tempVoxel);
+            } else if (blockState.getValue(FACING) == Direction.WEST) {
+                tempVoxel = OEVoxelShapeUtils.rotateBoxX270(tempVoxel);
+            } else if (blockState.getValue(FACING) == Direction.NORTH) {
+                tempVoxel = OEVoxelShapeUtils.rotateBoxX180(tempVoxel);
+            }
+            tempVoxel = OEVoxelShapeUtils.rotateBoxZ90(tempVoxel);
+            return(tempVoxel);
+        } else if (blockState.getValue(FACE) == AttachFace.CEILING) {
+            return(OEVoxelShapeUtils.rotateBoxZ180(tempVoxel));
+        }
+
+        return tempVoxel;
+        //return shp.getShape(blockState.getValue(FACING));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(RAISED);
+        builder.add(FACE);
+        builder.add(VERTICAL_DIRECTION);
     }
 
     @Nullable

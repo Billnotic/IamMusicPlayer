@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "minecraft:buttons"
+    },
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "D": {
+      "tag": "forge:ingots/copper"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "I": {
+      "tag": "forge:plates/iron"
+    },
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "N": {
+      "item": "minecraft:note_block"
+    }
+  },
+  "pattern": [
+    "CNC",
+    "BJD",
+    "IEI"
+  ],
+  "result": {
+    "item": "iammusicplayer:cassette_deck"
+  },
+  "show_notification": true
+}

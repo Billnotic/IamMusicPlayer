@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "antenna",
+  "key": {
+    "I": {
+      "tag": "forge:plates/iron"
+    },
+    "L": {
+      "item": "create:redstone_link"
+    },
+    "R": {
+      "item": "iammusicplayer:radio_antenna"
+    }
+  },
+  "pattern": [
+    "RIR",
+    "ILI",
+    "RIR"
+  ],
+  "result": {
+    "item": "iammusicplayer:parabolic_antenna"
+  },
+  "show_notification": true
+}

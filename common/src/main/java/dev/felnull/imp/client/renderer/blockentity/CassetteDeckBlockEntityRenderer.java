@@ -42,28 +42,32 @@ public class CassetteDeckBlockEntityRenderer extends AbstractBlockEntityRenderer
 
         if (lidOpen != 0) {
             poseStack.pushPose();
-            OERenderUtils.poseTrans16(poseStack, 3.7, 2.225, 3f);
-            OERenderUtils.poseScaleAll(poseStack, 0.72f);
+            OERenderUtils.poseTrans16(poseStack, 7f, 4.5f, 0.5f);
+            OERenderUtils.poseScaleAll(poseStack, 0.5f);
             mc.getItemRenderer().renderStatic(blockEntity.isChangeCassetteTape() ? blockEntity.getOldCassetteTape() : blockEntity.getCassetteTape(), ItemDisplayContext.FIXED, i, j, poseStack, multiBufferSource, mc.level, 0);
             poseStack.popPose();
         }
 
-        if (!IamMusicPlayer.getConfig().hideDisplaySprite) {
-            poseStack.pushPose();
-            poseStack.translate(1, 0, 0);
-            OERenderUtils.poseRotateY(poseStack, 180);
-            OERenderUtils.poseTrans16(poseStack, 0.6f, 2.35f, -1.9f);
-            var monitor = getMonitor(blockEntity.getMonitor());
-            float px16 = 1f / 16f;
-            monitor.renderAppearance(blockEntity, poseStack, multiBufferSource, LightTexture.FULL_BRIGHT, j, f, px16 * 7.8f, px16 * 2.275f);
-            poseStack.popPose();
-        }
+        //commenting this out as the display is not designed to be rendered by my new models, plus they clash aesthetically.
+        //if anyone wants to adjust the position to fit the new models be my guest
+        // - billnotic
+        //--
+        //if (!IamMusicPlayer.getConfig().hideDisplaySprite) {
+        //    poseStack.pushPose();
+        //    poseStack.translate(1, 0, 0);
+        //    OERenderUtils.poseRotateY(poseStack, 180);
+        //    OERenderUtils.poseTrans16(poseStack, 0.6f, 2.35f, -1.9f);
+        //    var monitor = getMonitor(blockEntity.getMonitor());
+        //    float px16 = 1f / 16f;
+        //    monitor.renderAppearance(blockEntity, poseStack, multiBufferSource, LightTexture.FULL_BRIGHT, j, f, px16 * 7.8f, px16 * 2.275f);
+        //    poseStack.popPose();
+        //}
 
         poseStack.pushPose();
-        OERenderUtils.poseTrans16(poseStack, 1.5f, 0.5f, 2f);
-        OERenderUtils.poseTrans16(poseStack, 0.125, 0.125, 0.125);
-        OERenderUtils.poseRotateX(poseStack, lidOpen * -40f);
-        OERenderUtils.poseTrans16(poseStack, -0.125, -0.125, -0.125);
+        OERenderUtils.poseTrans16(poseStack, 3f, 3f, 0f);
+        //OERenderUtils.poseTrans16(poseStack, 0.125, 0.125, 0.125);
+        OERenderUtils.poseRotateX(poseStack, lidOpen * -75f);
+        //OERenderUtils.poseTrans16(poseStack, -0.125, -0.125, -0.125);
         OERenderUtils.renderModel(poseStack, vertexConsumer, lidM, i, j);
         poseStack.popPose();
 

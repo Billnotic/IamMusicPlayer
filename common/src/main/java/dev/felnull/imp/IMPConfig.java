@@ -4,7 +4,7 @@ import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@Config(name = IamMusicPlayer.MODID)
+@Config(name = "iammusicplayer")
 @Config.Gui.Background("textures/block/note_block.png")
 public class IMPConfig implements ConfigData {
 
@@ -32,11 +32,11 @@ public class IMPConfig implements ConfigData {
     @ConfigEntry.Category("client")
     public String neteaseCloudMusicApiURL = "https://raw.githubusercontent.com/TeamFelnull/IamMusicPlayer/master/api_server.json";
 
-    @ConfigEntry.Category("client")
-    public boolean hideDisplaySprite = false;
+    //@ConfigEntry.Category("client")
+    //public boolean hideDisplaySprite = true;
 
-    @ConfigEntry.Category("client")
-    public boolean hideDecorativeAntenna = false;
+    //@ConfigEntry.Category("client")
+    //public boolean hideDecorativeAntenna = true;
 
     @ConfigEntry.Category("server")
     public long maxWaitTime = 1000 * 10;
